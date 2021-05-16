@@ -12,10 +12,23 @@ public class UIManager : MonoBehaviour
     
     public Text OptionBackSoundText;
     public Text OptionEffectSoundText;
+    public Text exp;
 
     private bool isBackSound = false;
     private bool isEffectSound = false;
 
+
+
+    private void Update() 
+    {
+        DataManager.Instance.levelUpCost = (int)(50 * (Mathf.Pow(1.07f, DataManager.Instance.penlevel-1) ));
+        DataManager.Instance.clickpower = (int)(DataManager.Instance.levelUpCost * 0.4);
+
+        exp.text = DataManager.Instance.exp.ToString();
+    }
+
+    
+    
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
@@ -94,5 +107,19 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("상점 나가기");
         ShopInfo.SetActive(false);
+    }
+
+    public void saveData()
+    {
+        DataManager.Instance.SaveData();
+    }
+
+    public void levelUp()
+    {
+        if((float)DataManager.Instance.exp > DataManager.Instance.levelUpCost)
+        {
+            DataManager.Instance.exp -= (int)DataManager.Instance.levelUpCost;
+            DataManager.Instance.penlevel++;
+        }
     }
 }

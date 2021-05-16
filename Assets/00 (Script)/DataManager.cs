@@ -11,19 +11,28 @@ public class PlayerData
 {
     public int clickerLevel;
     public int stageLevel;
-    public string gold; // Big Integer 형식은 string으로 저장
+    public string exp; // Big Integer 형식은 string으로 저장
 
     public void GetData()
     {
         // DataManager.Instance.level = clickerLevel;
         // DataManager.Instance.stageLvCount = stageLevel;
-        // DataManager.Instance.gold = BigInteger.Parse(gold);
+        // DataManager.Instance.gold = BigInteger.Parse(exp);
  
         //이렇게 데이터 접근해서 실제 데이터 매니저에서 가져오기 
     }
 }
+
 public class DataManager : MonoBehaviour
 {
+    public BigInteger exp;
+    
+    public int penlevel = 1;
+    public int clickpower;
+
+    public float levelUpCost;
+    
+    
     private static DataManager instance;
     public static DataManager Instance
     {

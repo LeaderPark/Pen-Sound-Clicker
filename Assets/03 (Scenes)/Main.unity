@@ -1207,6 +1207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50ae050f778f0d4a99235f49901b5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollectionInfo: {fileID: 0}
+  OptionInfo: {fileID: 0}
+  ShopInfo: {fileID: 0}
+  OptionBackSoundText: {fileID: 0}
+  OptionEffectSoundText: {fileID: 0}
 --- !u!4 &1834129676
 Transform:
   m_ObjectHideFlags: 0
